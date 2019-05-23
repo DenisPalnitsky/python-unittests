@@ -39,7 +39,8 @@ pipeline {
           // so we can retrieve the version in later steps
           sh "echo \$(jx-release-version) > VERSION"
           sh "jx step tag --version \$(cat VERSION)"
-          sh "python -m unittest"
+          sh "pip install -U pytest"
+          sh "pytest"
         }
       }
     }
