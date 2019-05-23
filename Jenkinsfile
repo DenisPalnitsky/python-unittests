@@ -20,7 +20,7 @@ pipeline {
       steps {
         container('python') {
 		  sh "pip install -U pytest"
-          sh "python -m unittest"
+          sh "pytest"
         }
       }
     }
